@@ -29,4 +29,9 @@ public class Notifications {
         return String.format("%s 복용 시간이 되어 %s 약물을 드실 시간입니다.",
                 this.time.toLocalTime(), this.userMedication.getName());
     }
+
+    //알림 수정
+    public void updateTime(LocalDateTime newTime) {
+        this.time = newTime;
+    }
 }

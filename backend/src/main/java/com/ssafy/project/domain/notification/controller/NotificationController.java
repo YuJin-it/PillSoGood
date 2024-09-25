@@ -27,9 +27,23 @@ public class NotificationController {
 
     // 알림 등록
     @PostMapping("/register")
-    public ResponseEntity<String> registerNotification(@RequestBody NotificationRequestDTO notificationRequestDTO) {
+    public ResponseEntity<?> registerNotification(@RequestBody NotificationRequestDTO notificationRequestDTO) {
         notificationService.registerNotification(notificationRequestDTO);
         return ResponseEntity.ok("알림이 성공적으로 등록되었습니다.");
+    }
+
+    // 알림 수정
+    @PostMapping("/modify")
+    public ResponseEntity<?> modifyNotification(@RequestBody NotificationRequestDTO notificationRequestDTO) {
+        notificationService.updateNotification(notificationRequestDTO);
+        return ResponseEntity.ok("알림이 성공적으로 수정되었습니다.");
+    }
+
+    // 알림 삭제 (특정 알림만)
+    @DeleteMapping("/delete/{notificationId}")
+    public ResponseEntity<?> deleteNotification(@PathVariable int notificationId) {
+        notificationService.deleteNotification(notificationId);
+        return ResponseEntity.ok("알림이 성공적으로 삭제되었습니다.");
     }
 
     // 알림 트리거

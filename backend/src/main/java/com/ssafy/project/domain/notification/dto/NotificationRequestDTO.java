@@ -19,6 +19,7 @@ public class NotificationRequestDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class NotificationsDTO {
+        private int notificationId;
         private LocalDateTime time;
     }
 }
