@@ -91,7 +91,9 @@ public enum ErrorCode {
     // Transaction Delete Error
     DELETE_ERROR(500, "9999", "Delete Transaction Error Exception"),
 
-    ; // End
+    //Custom Error - Notification
+    NOTIFICATION_ERROR(500, "9999", "알림 등록 실패");
+     // End
 
     /**
      * ******************************* Error Code Constructor ***************************************

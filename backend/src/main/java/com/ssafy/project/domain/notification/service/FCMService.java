@@ -19,26 +19,36 @@ public class FCMService {
 
     private final UserMedicationRepository userMedicationRepository;  // UserMedicationRepository 주입
 
-    public NotificationResponseDTO sendNotification(NotificationRequestDTO notificationRequestDTO) {
-        String deviceToken = notificationRequestDTO.getDeviceToken();
+//    public NotificationResponseDTO sendNotification(NotificationRequestDTO notificationRequestDTO) {
+//        String deviceToken = notificationRequestDTO.getDeviceToken();
+//
+//        // 약물 정보 조회
+//        UserMedication userMedication = userMedicationRepository.findById(notificationRequestDTO.getMedicationId())
+//                .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 약물 정보입니다."));
+//
+//        // Notification 엔티티 생성
+//        Notifications notification = Notifications.builder()
+//                .time(LocalDateTime.parse(notificationRequestDTO.getAlertTime()))  // 알림 시간 설정
+//                .userMedication(userMedication)
+//                .build();
+//
+//        // 알림 메시지 생성
+//        String notificationMessage = notification.getNotificationMessage();
+//
+//        // FCM 메시지 전송을 분리된 메소드로 관리
+//        try {
+//            sendFcmMessage(deviceToken, notificationMessage);
+//            return new NotificationResponseDTO("메시지 전송 성공!", true);
+//        } catch (Exception e) {
+//            // 예외 처리 강화 (로그 추가 등)
+//            return new NotificationResponseDTO("메시지 전송 실패: " + e.getMessage(), false);
+//        }
+//    }
 
-        // 약물 정보 조회
-        UserMedication userMedication = userMedicationRepository.findById(notificationRequestDTO.getMedicationId())
-                .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 약물 정보입니다."));
-
-        // Notification 엔티티 생성
-        Notifications notification = Notifications.builder()
-                .time(LocalDateTime.parse(notificationRequestDTO.getAlertTime()))  // 알림 시간 설정
-                .userMedication(userMedication)
-                .build();
-
-        // 알림 메시지 생성
-        String notificationMessage = notification.getNotificationMessage();
-
-        // FCM 알림 전송 로직
+    private void sendFcmMessage(String deviceToken, String messageBody) throws Exception {
         Notification fcmNotification = Notification.builder()
                 .setTitle("복용 알림")
-                .setBody(notificationMessage)
+                .setBody(messageBody)
                 .build();
 
         Message message = Message.builder()
@@ -46,12 +56,6 @@ public class FCMService {
                 .setNotification(fcmNotification)
                 .build();
 
-        try {
-            String response = FirebaseMessaging.getInstance().send(message);
-            return new NotificationResponseDTO("메시지 전송 성공! " + response, true);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new NotificationResponseDTO("메시지 전송 실패: " + e.getMessage(), false);
-        }
+        FirebaseMessaging.getInstance().send(message);
     }
 }

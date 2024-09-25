@@ -1,11 +1,12 @@
 package com.ssafy.project.domain.userMedication.entity;
 
 import com.ssafy.project.domain.userDetail.entity.UserDetail;
-import com.ssafy.project.domain.userMedication.dto.UserMedicationRequestDTO;
 import com.ssafy.project.domain.userMedicationDetail.entity.UserMedicationDetail;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
