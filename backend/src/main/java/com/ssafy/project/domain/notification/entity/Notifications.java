@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class Notification {
+public class Notifications {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -23,4 +23,10 @@ public class Notification {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_medicine_id", nullable = false)
     private UserMedication userMedication;
+
+    //알림 메시지
+    public String getNotificationMessage() {
+        return String.format("%s 복용 시간이 되어 %s 약물을 드실 시간입니다.",
+                this.time.toLocalTime(), this.userMedication.getName());
+    }
 }
