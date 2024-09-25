@@ -30,7 +30,7 @@ public class UserMedication {
     private Status status;
 
     @Column(name = "intake_at")
-    private String intakeAt;
+    private LocalDateTime intakeAt;
 
     @Column(name = "prescription_day")
     private int prescriptionDay;
@@ -48,7 +48,7 @@ public class UserMedication {
     @OneToMany(mappedBy = "userMedication", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     List<UserMedicationDetail> userMedicationDetailList = new ArrayList<>();
 
-    public void update(String name, String intakeAt, int prescriptionDay, String hospitalName, String pharmacyName) {
+    public void update(String name, LocalDateTime intakeAt, int prescriptionDay, String hospitalName, String pharmacyName) {
         this.name = name;
         this.intakeAt = intakeAt;
         this.prescriptionDay = prescriptionDay;
@@ -56,4 +56,8 @@ public class UserMedication {
         this.pharmacyName = pharmacyName;
     }
 
+    //복약 상태 업데이트
+    public void updateStatus(Status status) {
+        this.status = status;
+    }
 }

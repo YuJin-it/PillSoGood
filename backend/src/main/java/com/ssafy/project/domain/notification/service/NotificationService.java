@@ -4,13 +4,13 @@ import com.ssafy.project.domain.notification.dto.MedicationNotificationResponseD
 import com.ssafy.project.domain.notification.dto.NotificationRequestDTO;
 import com.ssafy.project.domain.notification.entity.Notifications;
 import com.ssafy.project.domain.notification.repository.NotificationRepository;
+import com.ssafy.project.domain.userMedication.entity.Status;
 import com.ssafy.project.domain.userMedication.entity.UserMedication;
 import com.ssafy.project.domain.userMedication.repository.UserMedicationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,5 +78,37 @@ public class NotificationService {
         notificationRepository.delete(notification);
     }
 
+    // 복약 지연
+    @Transactional
+    public void delayMedication(int medicationId) {
+        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다.")); // 해당 복약 정보가 없을 때 예외 처리
 
+        userMedication.updateStatus(Status.STOPPED);
+        userMedicationRepository.save(userMedication);
+    }
+
+    // 복약 재개
+    @Transactional
+    public void startMedication(int medicationId) {
+        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
+
+        if (userMedication.getStatus() == Status.STOPPED) {
+            userMedication.updateStatus(Status.TAKING);
+            userMedicationRepository.save(userMedication);
+        } else {
+            throw new IllegalArgumentException("중단된 상태가 아닌 복약은 다시 시작할 수 없습니다.");
+        }
+    }
+
+    // 복약 완료 (알림이 온다는 것 = 그만큼 복약한 것)
+    @Transactional
+    public void completeMedication(int medicationId) {
+        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
+
+        userMedication.updateStatus(Status.COMPLETED);
+        userMedicationRepository.save(userMedication);
+    }
 }

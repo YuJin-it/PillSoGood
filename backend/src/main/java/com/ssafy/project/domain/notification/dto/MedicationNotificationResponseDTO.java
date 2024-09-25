@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,9 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MedicationNotificationResponseDTO {
-    private String name;
-    private String intakeAt;
-    private int prescriptionDay;
-    private Status status;
-    private List<LocalDateTime> alertTimes;
+    private String name; //약봉투
+    private LocalDateTime intakeAt; //복용날짜
+    private int prescriptionDay; //처방일수
+    private Status status; //복용상태(복용중, 중지, 완료)
+    private List<LocalDateTime> alertTimes; //알림 시간 리스트
 }

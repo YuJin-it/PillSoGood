@@ -2,7 +2,6 @@ package com.ssafy.project.domain.notification.controller;
 
 import com.ssafy.project.domain.notification.dto.MedicationNotificationResponseDTO;
 import com.ssafy.project.domain.notification.dto.NotificationRequestDTO;
-import com.ssafy.project.domain.notification.dto.NotificationResponseDTO;
 import com.ssafy.project.domain.notification.service.FCMService;
 import com.ssafy.project.domain.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
@@ -44,6 +43,28 @@ public class NotificationController {
     public ResponseEntity<?> deleteNotification(@PathVariable int notificationId) {
         notificationService.deleteNotification(notificationId);
         return ResponseEntity.ok("알림이 성공적으로 삭제되었습니다.");
+    }
+
+    // 복약 지연
+    @PatchMapping("/delay/{medicationId}")
+    public ResponseEntity<?> delayMedication(@PathVariable int medicationId) {
+        notificationService.delayMedication(medicationId);
+        return ResponseEntity.ok("복약이 중단되었습니다.");
+    }
+
+
+    // 복약 재개
+    @PatchMapping("/restart/{medicationId}")
+    public ResponseEntity<?> startMedication(@PathVariable int medicationId) {
+        notificationService.startMedication(medicationId);
+        return ResponseEntity.ok("복약이 다시 시작되었습니다.");
+    }
+
+    // 복약 완료
+    @PatchMapping("/finish/{medicationId}")
+    public ResponseEntity<?> completeMedication(@PathVariable int medicationId) {
+        notificationService.completeMedication(medicationId);
+        return ResponseEntity.ok("복약이 완료되었습니다.");
     }
 
     // 알림 트리거
