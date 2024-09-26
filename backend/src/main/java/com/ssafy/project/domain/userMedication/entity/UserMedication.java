@@ -41,6 +41,9 @@ public class UserMedication {
     @Column(name = "pharmacy_name")
     private String pharmacyName;
 
+    @Column(name = "total_count")
+    private Integer totalCount;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_detail_id", nullable = false)
     private UserDetail userDetail;
@@ -60,4 +63,10 @@ public class UserMedication {
     public void updateStatus(Status status) {
         this.status = status;
     }
+
+    // count 값 설정 (처방일 수와 일일 복용 횟수를 곱한 값)
+    public void calculateAndSetCount(int count) {
+        this.totalCount = count;
+    }
+
 }
