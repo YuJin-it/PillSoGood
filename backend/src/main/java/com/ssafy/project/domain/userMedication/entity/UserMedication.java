@@ -69,4 +69,12 @@ public class UserMedication {
         this.totalCount = count;
     }
 
+
+    // count 감소
+    public void decreaseTotalCount() {
+        if (this.totalCount > 0) {
+            this.totalCount--;  // 복약 횟수 감소
+        }
+    }
+
 }

@@ -94,21 +94,43 @@ public class NotificationService {
         UserMedication userMedication = userMedicationRepository.findById(medicationId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
 
+        // 다시 복용을 시작하면 복약 count 감소
         if (userMedication.getStatus() == Status.STOPPED) {
             userMedication.updateStatus(Status.TAKING);
+
+            if (userMedication.getTotalCount() > 0) {
+                userMedication.decreaseTotalCount();
+            }
             userMedicationRepository.save(userMedication);
         } else {
             throw new IllegalArgumentException("중단된 상태가 아닌 복약은 다시 시작할 수 없습니다.");
         }
     }
 
-    // 복약 완료 (알림이 온다는 것 = 그만큼 복약한 것)
+    // 복약 완료
     @Transactional
     public void completeMedication(int medicationId) {
         UserMedication userMedication = userMedicationRepository.findById(medicationId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
 
-        userMedication.updateStatus(Status.COMPLETED);
-        userMedicationRepository.save(userMedication);
+        // 알림이 옴 -> count 감소 -> count가 0이면 복약 종료(상태 변경)
+        if (userMedication.getTotalCount() == 0) {
+            userMedication.updateStatus(Status.COMPLETED);
+            userMedicationRepository.save(userMedication);
+        }
+    }
+
+    // 복약 알림
+    @Transactional
+    public void triggerNotification(int medicationId) {
+        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
+
+        String title = "복약 알림";
+        String body = userMedication.getName() + " 약물을 복용할 시간입니다.";
+        String token = userMedication.getUserDetail().getFcmToken();  // FCM 토큰 가져오기
+
+        // FCM 알림 전송
+        fcmService.sendNotification(title, body, token);
     }
 }
