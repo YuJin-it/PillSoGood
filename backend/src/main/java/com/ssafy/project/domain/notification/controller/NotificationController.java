@@ -5,7 +5,6 @@ import com.ssafy.project.domain.notification.dto.NotificationRequestDTO;
 import com.ssafy.project.domain.notification.service.FCMService;
 import com.ssafy.project.domain.notification.service.NotificationService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,7 +55,7 @@ public class NotificationController {
     // 복약 재개
     @PatchMapping("/restart/{medicationId}")
     public ResponseEntity<?> startMedication(@PathVariable int medicationId) {
-        notificationService.startMedication(medicationId);
+        notificationService.restartMedication(medicationId);
         return ResponseEntity.ok("복약이 다시 시작되었습니다.");
     }
 
@@ -67,10 +66,10 @@ public class NotificationController {
         return ResponseEntity.ok("복약이 완료되었습니다.");
     }
 
-    // 알림 트리거
+    // 복약 알림 트리거
 //    @PostMapping("/trigger")
-//    public ResponseEntity<NotificationResponseDTO> sendNotification(@RequestBody NotificationRequestDTO notificationRequestDTO) {
-//        NotificationResponseDTO response = fcmService.sendNotification(notificationRequestDTO);
-//        return ResponseEntity.ok(response);
+//    public ResponseEntity<String> triggerMedicationAlert(@RequestBody int userMedicationId) {
+//        userMedicationService.triggerMedicationAlert(userMedicationId);
+//        return ResponseEntity.ok("복약 알림이 트리거되었습니다.");
 //    }
 }
