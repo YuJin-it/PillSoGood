@@ -92,7 +92,11 @@ public enum ErrorCode {
     DELETE_ERROR(500, "9999", "Delete Transaction Error Exception"),
 
     //Custom Error - Notification
-    NOTIFICATION_ERROR(500, "9999", "알림 등록 실패");
+    NOTIFICATION_ERROR(500, "9999", "알림 등록 실패"),
+
+    NOTIFICATION_ALREADY_EXISTS(409,"N001", "이미 존재하는 알림입니다."),
+    INVALID_NOTIFICATION_DATA(400,"N002", "유효하지 않은 알림 데이터입니다."),
+    NOTIFICATION_NOT_FOUND(404,"N003", "해당 알림을 찾을 수 없습니다.");
      // End
 
     /**

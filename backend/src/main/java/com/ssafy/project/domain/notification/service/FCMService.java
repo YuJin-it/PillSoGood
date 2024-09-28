@@ -4,16 +4,19 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class FCMService {
 
-    // FCM을 통해 알림 전송
+    @Transactional
     public void sendNotification(String title, String body, String token) {
         try {
-            // 알림 메시지 구성
             Message message = Message.builder()
                     .setNotification(Notification.builder()
                             .setTitle(title)
@@ -22,11 +25,11 @@ public class FCMService {
                     .setToken(token)
                     .build();
 
-            // 알림 전송
             String response = FirebaseMessaging.getInstance().send(message);
-            System.out.println("알림 전송 완료: " + response);
+            log.info("알림 전송 완료: {}", response);
         } catch (Exception e) {
-            System.err.println("알림 전송 실패: " + e.getMessage());
+            log.error("알림 전송 실패: {}", e.getMessage());
         }
     }
 }
+

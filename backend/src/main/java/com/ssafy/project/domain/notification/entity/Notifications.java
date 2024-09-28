@@ -20,18 +20,20 @@ public class Notifications {
     @Column(name = "time", nullable = false)
     private LocalDateTime time;
 
+    @Column(name = "enabled")
+    private boolean enabled;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_medicine_id", nullable = false)
     private UserMedication userMedication;
 
-    //알림 메시지
-    public String getNotificationMessage() {
-        return String.format("%s 복용 시간이 되어 %s 약물을 드실 시간입니다.",
-                this.time.toLocalTime(), this.userMedication.getName());
-    }
-
     //알림 수정
     public void updateTime(LocalDateTime newTime) {
         this.time = newTime;
+    }
+
+    //알림 상태 수정
+    public void updateNotification(boolean enabled) {
+        this.enabled = enabled;
     }
 }
