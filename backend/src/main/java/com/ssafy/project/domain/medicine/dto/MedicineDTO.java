@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Getter
+@Setter // 추가
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

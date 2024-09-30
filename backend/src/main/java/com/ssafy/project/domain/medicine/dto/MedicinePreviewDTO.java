@@ -1,22 +1,29 @@
 package com.ssafy.project.domain.medicine.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ssafy.project.domain.lists.ageProhibition.dto.AgeProhibitionDTO;
 import com.ssafy.project.domain.lists.amountProhibition.dto.AmountProhibitionDTO;
 import com.ssafy.project.domain.lists.pregnancyProhibition.dto.PregnancyProhibitionDTO;
 import com.ssafy.project.domain.lists.seniorProhibition.dto.SeniorProhibitionDTO;
+import com.ssafy.project.domain.medicine.entity.Category;
 import com.ssafy.project.domain.medicine.entity.Medicine;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonIgnoreProperties (ignoreUnknown = true)  // 알 수 없는 필드 무시
 public class MedicinePreviewDTO {
 
     private int id;
     private String korName;
     private String engName;
     private String imageUrl;
+    private Category category;
     private AgeProhibitionDTO ageProhibition;
     private AmountProhibitionDTO amountProhibition;
     private PregnancyProhibitionDTO pregnancyProhibition;
@@ -28,6 +35,7 @@ public class MedicinePreviewDTO {
                 .korName(medicine.getKorName())
                 .engName(medicine.getEngName())
                 .imageUrl(medicine.getImageUrl())
+                .category(medicine.getCategory())
                 .ageProhibition(medicine.getAgeProhibition() != null ?
                         AgeProhibitionDTO.toDto(medicine.getAgeProhibition()) : null)
                 .amountProhibition(medicine.getAmountProhibition() != null ?
