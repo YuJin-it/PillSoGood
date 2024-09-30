@@ -46,15 +46,16 @@ public class MedicineService {
         List<CombinationProhibitionDTO> combinationProhibitions = new ArrayList<>();
 
         for (int i = 0; i < medicineIds.size(); i++) {
-            for (int j = i + 1; j < medicineIds.size(); j++) {
+            for (int j = 0; j < medicineIds.size(); j++) {
                 // 두 개의 약물 선택
                 int medicine1 = medicineIds.get(i);
                 int medicine2 = medicineIds.get(j);
 
                 // 조합된 약물의 금기사항을 찾거나 처리하는 로직 추가
-                CombinationProhibitionDTO combinationProhibitionDTO = new CombinationProhibitionDTO();
-                combinationProhibitionDTO = elasticsearchService.searchCombinationProhibition(medicine1, medicine2);
-                combinationProhibitions.add(combinationProhibitionDTO);
+                CombinationProhibitionDTO combinationProhibitionDTO = elasticsearchService.searchCombinationProhibition(medicine1, medicine2);
+                if (combinationProhibitionDTO != null) {
+                    combinationProhibitions.add(combinationProhibitionDTO);
+                }
             }
         }
         return combinationProhibitions;

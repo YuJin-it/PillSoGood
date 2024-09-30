@@ -75,7 +75,6 @@ public class MedicineController {
 
     @PostMapping ("/compare")
     public ResponseEntity<List<CombinationProhibitionDTO>> compareMedicine(@RequestBody MedicineListDTO medicineList) {
-        System.out.println("#" + medicineList.getMedicineIds().get(0));
         return ResponseEntity.ok(medicineService.findAllCombinationProhibition(medicineList.getMedicineIds()));
     }
 }
