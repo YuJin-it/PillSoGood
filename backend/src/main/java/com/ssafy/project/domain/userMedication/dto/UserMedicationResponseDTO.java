@@ -5,6 +5,7 @@ import com.ssafy.project.domain.userMedication.entity.UserMedication;
 import com.ssafy.project.domain.userMedicationDetail.dto.UserMedicationDetailResponseDTO;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class UserMedicationResponseDTO {
     private int id;
     private String name;
     private Status status;
-    private String intakeAt;
+    private LocalDateTime intakeAt;
     private int prescriptionDay;
     private String hospitalName;
     private String pharmacyName;

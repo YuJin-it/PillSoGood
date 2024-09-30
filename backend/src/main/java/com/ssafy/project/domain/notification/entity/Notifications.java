@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
-public class Notification {
+public class Notifications {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -20,7 +20,20 @@ public class Notification {
     @Column(name = "time", nullable = false)
     private LocalDateTime time;
 
+    @Column(name = "enabled")
+    private boolean enabled;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_medicine_id", nullable = false)
     private UserMedication userMedication;
+
+    //알림 수정
+    public void updateTime(LocalDateTime newTime) {
+        this.time = newTime;
+    }
+
+    //알림 상태 수정
+    public void updateNotification(boolean enabled) {
+        this.enabled = enabled;
+    }
 }
