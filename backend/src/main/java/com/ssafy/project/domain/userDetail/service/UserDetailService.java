@@ -23,6 +23,7 @@ public class UserDetailService {
     // 사용자 조회
     @Transactional(readOnly = true)
     public UserDetailResponseDTO getUser(int userId, String family) {
+
         if (family != null) {
             UserDetail userDetail = userDetailRepository.findByUserIdAndFamily(userId, family)
                     .orElseThrow(() -> new IllegalArgumentException("해당 가족 정보를 찾을 수 없습니다."));
