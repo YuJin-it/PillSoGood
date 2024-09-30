@@ -17,6 +17,8 @@ import lombok.NoArgsConstructor;
 public class CombinationProhibitionDTO {
     private int id;
     private String effect;
+    private int medicineIdA;
+    private int medicineIdB;
     private String nameA;
     private String nameB;
 
@@ -24,6 +26,8 @@ public class CombinationProhibitionDTO {
         return CombinationProhibitionDTO.builder()
                 .id(combinationProhibition.getId())
                 .effect(combinationProhibition.getEffect())
+                .medicineIdA(combinationProhibition.getMedicineA().getId())
+                .medicineIdB(combinationProhibition.getMedicineB().getId())
                 .nameA(combinationProhibition.getNameA())
                 .nameB(combinationProhibition.getNameB())
                 .build();
