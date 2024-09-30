@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.ssafy.project.domain.lists.combinationProhibition.dto.CombinationProhibitionDTO;
 import com.ssafy.project.domain.lists.medicineInformation.dto.MedicineInformationDTO;
+import com.ssafy.project.domain.medicine.dto.MedicineDTO;
 import com.ssafy.project.domain.medicine.dto.MedicinePreviewDTO;
 import com.ssafy.project.domain.medicine.entity.Category;
 import org.elasticsearch.action.search.SearchRequest;
@@ -80,6 +81,34 @@ public class ElasticsearchService {
         return resultList;
     }
 
+    // 약 세부 조회
+    public MedicineDTO searchMedicine(int medicineId) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);  // 필드명 매칭 설정
+
+        try {
+            // Elasticsearch 쿼리 생성
+            SearchRequest searchRequest = new SearchRequest("medicine_index");  // 인덱스 이름 지정
+            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+            searchSourceBuilder.query(QueryBuilders.matchQuery("id", medicineId));
+            searchRequest.source(searchSourceBuilder);
+
+            // Elasticsearch에서 검색 결과 가져오기
+            SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
+            if (searchResponse.getHits().getHits().length > 0) {
+                SearchHit hit = searchResponse.getHits().getHits()[0];  // 첫 번째 검색 결과
+                return objectMapper.readValue(hit.getSourceAsString(), MedicineDTO.class);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     // 약 정보
     public List<MedicineInformationDTO> searchMedicineInformation(int medicineId) {
         List<MedicineInformationDTO> resultList = new ArrayList<>();
@@ -117,6 +146,7 @@ public class ElasticsearchService {
     public <T> T searchProhibition(Class<T> DTO, String index, int medicineId) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);  // 필드명 매칭 설정
 
         try {
             // Elasticsearch 쿼리 생성
@@ -145,6 +175,7 @@ public class ElasticsearchService {
     public CombinationProhibitionDTO searchCombinationProhibition(int medicineIdA, int medicineIdB) {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);  // 필드명 매칭 설정
 
         try {
             // Elasticsearch 쿼리 생성

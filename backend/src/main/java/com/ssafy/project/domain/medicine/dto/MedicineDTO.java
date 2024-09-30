@@ -1,5 +1,6 @@
 package com.ssafy.project.domain.medicine.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ssafy.project.domain.lists.ageProhibition.dto.AgeProhibitionDTO;
 import com.ssafy.project.domain.lists.amountProhibition.dto.AmountProhibitionDTO;
 import com.ssafy.project.domain.lists.medicineInformation.dto.MedicineInformationDTO;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class MedicineDTO {
 
     private int id;

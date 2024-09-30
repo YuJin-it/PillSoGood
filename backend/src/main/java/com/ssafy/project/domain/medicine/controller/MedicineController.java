@@ -2,12 +2,14 @@ package com.ssafy.project.domain.medicine.controller;
 
 import com.ssafy.project.domain.lists.ageProhibition.dto.AgeProhibitionDTO;
 import com.ssafy.project.domain.lists.amountProhibition.dto.AmountProhibitionDTO;
+import com.ssafy.project.domain.lists.combinationProhibition.dto.CombinationProhibitionDTO;
 import com.ssafy.project.domain.lists.medicineInformation.dto.MedicineInformationDTO;
 import com.ssafy.project.domain.lists.pregnancyProhibition.dto.PregnancyProhibitionDTO;
 import com.ssafy.project.domain.lists.pregnancyProhibition.entity.PregnancyProhibition;
 import com.ssafy.project.domain.lists.seniorProhibition.dto.SeniorProhibitionDTO;
 import com.ssafy.project.domain.lists.seniorProhibition.entity.SeniorProhibition;
 import com.ssafy.project.domain.medicine.dto.MedicineDTO;
+import com.ssafy.project.domain.medicine.dto.MedicineListDTO;
 import com.ssafy.project.domain.medicine.dto.MedicinePreviewDTO;
 import com.ssafy.project.domain.medicine.entity.Category;
 import com.ssafy.project.domain.medicine.service.MedicineService;
@@ -35,6 +37,7 @@ public class MedicineController {
         return ResponseEntity.ok(medicineService.findAll());
     }
 
+    // ES 전체조회
     @GetMapping ("/d")
     public ResponseEntity<List<MedicinePreviewDTO>> getMedicinestmp(@RequestParam (required = false) String prefix,
                                                                     @RequestParam (required = false) List<Category> categories) {
@@ -53,7 +56,7 @@ public class MedicineController {
     //알약상세조회 ES
     @GetMapping ("/d/{medicineId}")
     public ResponseEntity<MedicineDTO> getMedicineByIdtmp(@PathVariable Integer medicineId) {
-        MedicineDTO medicineDTO = medicineService.findById(medicineId);
+        MedicineDTO medicineDTO = elasticsearchService.searchMedicine(medicineId);
 
         PregnancyProhibitionDTO pregnancyProhibitions = elasticsearchService.searchProhibition(PregnancyProhibitionDTO.class, "pregnancy_prohibition_index", medicineId);
         SeniorProhibitionDTO seniorProhibitions = elasticsearchService.searchProhibition(SeniorProhibitionDTO.class, "senior_prohibition_index", medicineId);
@@ -68,5 +71,11 @@ public class MedicineController {
         medicineDTO.setMedicineInformation(medicineInformations);
 
         return ResponseEntity.ok(medicineDTO);
+    }
+
+    @PostMapping ("/compare")
+    public ResponseEntity<List<CombinationProhibitionDTO>> compareMedicine(@RequestBody MedicineListDTO medicineList) {
+        System.out.println("#" + medicineList.getMedicineIds().get(0));
+        return ResponseEntity.ok(medicineService.findAllCombinationProhibition(medicineList.getMedicineIds()));
     }
 }

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonIgnoreProperties (ignoreUnknown = true)  // 알 수 없는 필드 무시
+
 public class MedicinePreviewDTO {
 
     private int id;
