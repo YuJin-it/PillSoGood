@@ -56,7 +56,6 @@ public class SecurityConfig {
                                 .requestMatchers(
                                         // 경로 추가 ex) "/api/user/**",
                                         "/api/login"
-                                        ,"api/medicine/**"
                                 ).permitAll() // 인증 없이 접근 가능한 경로 설정
                                 .anyRequest().authenticated()) // 그 외 모든 요청은 인증 필요
                 .addFilterBefore(new JwtAuthenticationFilter(jwtUtil, userLoginService), UsernamePasswordAuthenticationFilter.class);
@@ -79,7 +78,6 @@ public class SecurityConfig {
         return (web) -> web.ignoring().requestMatchers(
                 // 경로 추가 ex) "/api/user/**",
                 "/api/login"
-                ,"api/medicine/**"
         );
     }
 

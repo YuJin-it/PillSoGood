@@ -1,12 +1,10 @@
 package com.ssafy.project.domain.medicationApi.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -15,6 +13,7 @@ public class MedicationApiRequestDto {
     @JsonProperty("LOGINOPTION")
     private String loginOption;
 
+    //AS256 암호화 필요
     @JsonProperty("JUMIN")
     private String jumin;
 
