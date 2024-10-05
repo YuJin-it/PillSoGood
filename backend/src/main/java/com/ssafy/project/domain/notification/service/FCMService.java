@@ -3,6 +3,7 @@ package com.ssafy.project.domain.notification.service;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.Notification;
+import com.ssafy.project.domain.notification.entity.Notifications;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,11 @@ public class FCMService {
         } catch (Exception e) {
             log.error("알림 전송 실패: {}", e.getMessage());
         }
+    }
+
+    @Transactional
+    public void sendNotification(Notifications notification, String title, String body) {
+        sendNotification(title, body, notification.getFcmToken());
     }
 }
 

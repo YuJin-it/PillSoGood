@@ -47,6 +47,7 @@ public class NotificationService {
         for (NotificationRequestDTO.NotificationsDTO notificationDTO : notificationRequestDTO.getNotificationsDTOList()) {
             Notifications notification = Notifications.builder()
                     .time(notificationDTO.getTime())
+                    .fcmToken(notificationDTO.getFcmToken())
                     .userMedication(userMedication)
                     .enabled(true)
                     .build();
@@ -63,6 +64,7 @@ public class NotificationService {
                     .orElseThrow(() -> new IllegalArgumentException("해당 알림 정보를 찾을 수 없습니다."));
 
             notification.updateTime(notificationDTO.getTime());
+            notification.updateFcmToken(notificationDTO.getFcmToken());
 
             notificationRepository.save(notification);
         }

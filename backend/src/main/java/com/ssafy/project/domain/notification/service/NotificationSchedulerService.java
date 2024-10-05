@@ -40,10 +40,9 @@ public class NotificationSchedulerService {
 
             String title = "복약 알림";
             String body = userMedication.getName() + " 약물을 복용할 시간입니다.";
-            String token = userMedication.getUserDetail().getFcmToken();
 
             // FCM 알림 전송
-            fcmService.sendNotification(title, body, token);
+            fcmService.sendNotification(notification, title, body);
 
             log.info("알림 전송 완료 : {}", notification.getTime());
 

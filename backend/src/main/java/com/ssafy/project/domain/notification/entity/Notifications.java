@@ -23,6 +23,9 @@ public class Notifications {
     @Column(name = "enabled")
     private boolean enabled;
 
+    @Column(name = "fcm_token")
+    private String fcmToken;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_medicine_id", nullable = false)
     private UserMedication userMedication;
@@ -35,5 +38,10 @@ public class Notifications {
     //알림 상태 수정
     public void updateNotification(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    // FCM 토큰 업데이트
+    public void updateFcmToken(String fcmToken) {
+        this.fcmToken = fcmToken;
     }
 }

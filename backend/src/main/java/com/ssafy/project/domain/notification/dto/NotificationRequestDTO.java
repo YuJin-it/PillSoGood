@@ -21,5 +21,6 @@ public class NotificationRequestDTO {
     public static class NotificationsDTO {
         private int notificationId;
         private LocalDateTime time;
+        private String fcmToken;
     }
 }

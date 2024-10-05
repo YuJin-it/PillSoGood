@@ -38,7 +38,6 @@ public class UserDetailRequestDTO {
                 .pregnancy(this.pregnancy)
                 .allergy(allergyString) // 알러지 리스트를 문자열로 변환하여 저장
                 .family(this.family)
-                .fcmToken(this.fcmToken)
                 .build();
     }
 
@@ -66,10 +65,6 @@ public class UserDetailRequestDTO {
             userDetail.updateAllergies(this.allergies);
         }else {
             userDetail.updateAllergies(List.of("없음")); // 알러지가 없을 경우 "없음"으로 설정
-        }
-
-        if (this.fcmToken != null) {
-            userDetail.updateFcmToken(this.fcmToken);
         }
     }
 }
