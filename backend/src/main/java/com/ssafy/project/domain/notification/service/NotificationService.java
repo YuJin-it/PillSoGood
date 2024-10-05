@@ -44,10 +44,12 @@ public class NotificationService {
         UserMedication userMedication = userMedicationRepository.findById(notificationRequestDTO.getMedicationId())
                 .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 복약 정보입니다."));
 
+        String fcmToken = notificationRequestDTO.getNotificationsDTOList().get(0).getFcmToken();
+
         for (NotificationRequestDTO.NotificationsDTO notificationDTO : notificationRequestDTO.getNotificationsDTOList()) {
             Notifications notification = Notifications.builder()
                     .time(notificationDTO.getTime())
-                    .fcmToken(notificationDTO.getFcmToken())
+                    .fcmToken(fcmToken) // 지정한 알림에 대하여 토큰은 동일하게
                     .userMedication(userMedication)
                     .enabled(true)
                     .build();
@@ -64,8 +66,6 @@ public class NotificationService {
                     .orElseThrow(() -> new IllegalArgumentException("해당 알림 정보를 찾을 수 없습니다."));
 
             notification.updateTime(notificationDTO.getTime());
-            notification.updateFcmToken(notificationDTO.getFcmToken());
-
             notificationRepository.save(notification);
         }
     }

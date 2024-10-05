@@ -65,5 +65,4 @@ public class NotificationController {
         notificationService.checkMedication(medicationId);
         return ResponseEntity.ok("복약이 완료되었습니다.");
     }
-
 }
