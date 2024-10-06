@@ -19,5 +19,4 @@ public class UserDto {
     private String refreshToken;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private boolean isNewUser;
 }

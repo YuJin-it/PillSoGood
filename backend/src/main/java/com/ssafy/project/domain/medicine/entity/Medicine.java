@@ -57,6 +57,10 @@ public class Medicine {
     @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_medication_detail_id", referencedColumnName = "id")
+    private UserMedicationDetail userMedicationDetail;
+
     // Medicine이 여러 MedicineInformation을 갖고 있는 일대다 관계 설정
     @OneToMany(mappedBy = "medicine", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<MedicineInformation> medicineInformation = new ArrayList<>();

@@ -14,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 public class UserDetailResponseDTO {
-    private int userDetailId;
     private String name;
     private String email;
     private LocalDate birth;
@@ -27,7 +26,6 @@ public class UserDetailResponseDTO {
 
     public static UserDetailResponseDTO fromEntity(UserDetail userDetail) {
         return new UserDetailResponseDTO(
-                userDetail.getId(),
                 userDetail.getUser().getName(),
                 userDetail.getUser().getEmail(),
                 userDetail.getBirth(),

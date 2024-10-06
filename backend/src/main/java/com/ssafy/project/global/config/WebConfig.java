@@ -14,8 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOriginPatterns(
                         "https://j11b308.p.ssafy.io",
                         "http://j11b308.p.ssafy.io",
-                        "http://localhost:3000",
-                        "http://localhost:5173"
+                        "http://localhost:3000"
                 )
                 .allowedMethods("*")
                 .allowedHeaders("*")

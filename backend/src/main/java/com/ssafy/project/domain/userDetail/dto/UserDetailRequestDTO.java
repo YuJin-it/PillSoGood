@@ -23,7 +23,6 @@ public class UserDetailRequestDTO {
     private Pregnancy pregnancy;
     private List<String> allergies;
     private String family;
-    private String fcmToken;
 
     // 첫 생성
     public UserDetail toEntity(User user) {

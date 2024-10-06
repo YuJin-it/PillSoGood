@@ -21,7 +21,7 @@ public class UserDetail {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "family")
+    @Column(name = "family", nullable = false)
     private String family; //가족 정보
 
     @Column(name = "birth")

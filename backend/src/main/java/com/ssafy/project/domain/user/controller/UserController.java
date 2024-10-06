@@ -1,7 +1,5 @@
 package com.ssafy.project.domain.user.controller;
 
-import com.ssafy.project.domain.user.dto.KakaoTokenDTO;
-import com.ssafy.project.domain.user.dto.RefreshTokenDTO;
 import com.ssafy.project.domain.user.dto.UserDto;
 import com.ssafy.project.domain.user.service.KakaoService;
 import com.ssafy.project.domain.user.service.UserLoginService;
@@ -18,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Tag (name = "카카오 로그인")
+@Tag(name = "카카오 로그인")
 @RestController
-@RequestMapping (value = "/api")
+@RequestMapping(value = "/api")
 public class UserController {
     private final KakaoService kakaoService;
     private final UserLoginService userLoginService;
@@ -33,10 +31,9 @@ public class UserController {
         this.jwtUtil = jwtUtil;
     }
 
-    @Operation (summary = "카카오 로그인")
-    @PostMapping ("/login")
-    public ResponseEntity<?> kakaoLogin(@RequestBody KakaoTokenDTO kakaoTokenDTO) {
-        String kakaoToken = kakaoTokenDTO.getKakaoToken();
+    @Operation(summary = "카카오 로그인")
+    @PostMapping("/login")
+    public ResponseEntity<?> kakaoLogin(@RequestBody String kakaoToken) {
         if (kakaoToken == null || kakaoToken.isEmpty()) {
             // 유효하지 않은 카카오 토큰에 대해 예외 던짐
             throw new IllegalArgumentException("유효하지 않은 카카오 토큰");
@@ -54,27 +51,25 @@ public class UserController {
         userLoginService.storeRefreshToken(user.getId(), refreshToken);
 
         // JWT 토큰 반환
-        return ResponseEntity.ok(new JwtResponse(accessToken, refreshToken, user.isNewUser()));
+        return ResponseEntity.ok(new JwtResponse(accessToken, refreshToken));
     }
 
-    @Operation (summary = "액세스 토큰 재발급")
-    @PostMapping ("/refresh")
-    public ResponseEntity<?> refreshAccessToken(@RequestBody RefreshTokenDTO refreshTokenDTO) {
-        String refreshToken = refreshTokenDTO.getRefreshToken();
+    @Operation(summary = "액세스 토큰 재발급")
+    @PostMapping("/refresh")
+    public ResponseEntity<?> refreshAccessToken(@RequestBody String refreshToken) {
         if (jwtUtil.validateToken(refreshToken, true)) {
             int userId = jwtUtil.getUserIdFromRefreshToken(refreshToken);
             String newAccessToken = jwtUtil.createAccessToken(userId);
             return ResponseEntity.ok(new JwtResponse(newAccessToken, refreshToken));
-        }
-        else {
+        } else {
             throw new IllegalArgumentException("유효하지 않은 리프레시 토큰");
         }
     }
 
-    @Operation (summary = "로그아웃")
-    @PostMapping ("/logout")
+    @Operation(summary = "로그아웃")
+    @PostMapping("/logout")
     public ResponseEntity<?> logout(HttpServletRequest request) {
-        int userId = (Integer)request.getAttribute("userId");
+        int userId = (Integer) request.getAttribute("userId");
         if (userId <= 0) {
             throw new IllegalArgumentException("유효하지 않은 사용자 ID");
         }

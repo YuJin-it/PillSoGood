@@ -17,20 +17,20 @@ public class CombinationProhibition {
 
     // 첫 번째 약물
     @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name = "medicine_id_a", referencedColumnName = "id")
+    @JoinColumn (name = "medicine_id_A", referencedColumnName = "id")
     private Medicine medicineA;
 
     // 두 번째 약물
     @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name = "medicine_id_b", referencedColumnName = "id")
+    @JoinColumn (name = "medicine_id_B", referencedColumnName = "id")
     private Medicine medicineB;
 
     @Column (name = "effect", columnDefinition = "TEXT")
     private String effect;
 
-    @Column (name = "name_a", columnDefinition = "TEXT")
+    @Column (name = "name_A", columnDefinition = "TEXT")
     private String nameA;
 
-    @Column (name = "name_b", columnDefinition = "TEXT")
+    @Column (name = "name_B", columnDefinition = "TEXT")
     private String nameB;
 }

@@ -26,9 +26,7 @@ public class UserLoginService {
         Optional<User> existingUser = userRepository.findByKakaoKey(kakaoKey);
 
         if (existingUser.isPresent()) {
-            UserDto user = toDto(existingUser.get());
-            user.setNewUser(false);
-            return user;
+            return toDto(existingUser.get());
         } else {
             User newUser = User.builder()
                     .kakaoKey(kakaoKey)
@@ -40,9 +38,7 @@ public class UserLoginService {
                     .build();
 
             User savedUser = userRepository.save(newUser);
-            UserDto user = toDto(savedUser);
-            user.setNewUser(true);
-            return user;
+            return toDto(savedUser);
         }
     }
 

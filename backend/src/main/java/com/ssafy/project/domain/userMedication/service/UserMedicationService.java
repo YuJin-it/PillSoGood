@@ -35,26 +35,16 @@ public class UserMedicationService {
         UserDetail userDetail = userDetailRepository.findById(userMedicationRequestDTO.getUserDetailId()).orElseThrow(() ->
                 new IllegalArgumentException("UserDetail not found"));
 
-        int maxCount = 0; // 최대값을 저장할 변수 초기화
-
         UserMedication userMedication = userMedicationRequestDTO.toEntity(new ArrayList<>(), userDetail);
 
         for(UserMedicationDetailRequestDTO dto: userMedicationRequestDTO.getUserMedicationDetailList()) {
             Medicine medicine = medicineRepository.findById(dto.getMedicineId()).orElseThrow(() ->
-                    new IllegalArgumentException("Medicine not found"));
+                    new IllegalArgumentException("Medicine not Fount"));
 
             UserMedicationDetail detail = dto.toEntity(medicine, userMedication);
             userMedication.getUserMedicationDetailList().add(detail);
-
-            int calculatedCount = userMedication.getPrescriptionDay() * detail.getDailyIntakeFrequency();
-
-            // 현재 계산된 값이 기존 최대값보다 크면 업데이트
-            if (calculatedCount > maxCount) {
-                maxCount = calculatedCount;
-            }
         }
-        System.out.println(maxCount);
-        userMedication.calculateAndSetCount(maxCount);
+
         userMedicationRepository.save(userMedication);
     }
 
