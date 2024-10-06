@@ -36,27 +36,27 @@ public class NotificationController {
         return ResponseEntity.ok("알림이 성공적으로 수정되었습니다.");
     }
 
-    // 알림 삭제 (특정 알림만)
-    @DeleteMapping("/delete/{notificationId}")
-    public ResponseEntity<?> deleteNotification(@PathVariable int notificationId) {
-        notificationService.deleteNotification(notificationId);
+    // 알림 삭제 (전체)
+    @DeleteMapping("/delete/{medicationId}")
+    public ResponseEntity<?> deleteNotification(@PathVariable int medicationId) {
+        notificationService.deleteNotification(medicationId);
         return ResponseEntity.ok("알림이 성공적으로 삭제되었습니다.");
     }
 
     // 복약 지연
-    @PatchMapping("/delay/{medicationId}")
-    public ResponseEntity<?> delayMedication(@PathVariable int medicationId) {
-        notificationService.pauseMedication(medicationId);
-        return ResponseEntity.ok("복약이 중단되었습니다.");
-    }
-
-
-    // 복약 재개
-    @PatchMapping("/restart/{medicationId}")
-    public ResponseEntity<?> startMedication(@PathVariable int medicationId) {
-        notificationService.resumeMedication(medicationId);
-        return ResponseEntity.ok("복약이 다시 시작되었습니다.");
-    }
+//    @PatchMapping("/delay/{medicationId}")
+//    public ResponseEntity<?> delayMedication(@PathVariable int medicationId) {
+//        notificationService.pauseMedication(medicationId);
+//        return ResponseEntity.ok("복약이 중단되었습니다.");
+//    }
+//
+//
+//    // 복약 재개
+//    @PatchMapping("/restart/{medicationId}")
+//    public ResponseEntity<?> startMedication(@PathVariable int medicationId) {
+//        notificationService.resumeMedication(medicationId);
+//        return ResponseEntity.ok("복약이 다시 시작되었습니다.");
+//    }
 
 
     // 복약 체크

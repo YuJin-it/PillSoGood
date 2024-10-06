@@ -15,4 +15,7 @@ public interface NotificationRepository extends JpaRepository<Notifications, Int
 
     List<Notifications> findByTimeAndUserMedicationStatusAndEnabled(LocalDateTime time, Status status, boolean enabled);
     List<Notifications> findByUserMedicationAndEnabled(UserMedication userMedication, boolean enabled);
+
+    List<Notifications> findByUserMedicationAndFcmToken(UserMedication userMedication, String fcmToken);
+    void deleteByUserMedication(UserMedication userMedication);
 }

@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,10 +31,9 @@ public class NotificationService {
         List<Notifications> notifications = notificationRepository.findByUserMedication(userMedication);
 
         return new MedicationNotificationResponseDTO(
+                userMedication.getId(),
                 userMedication.getName(),
-                userMedication.getIntakeAt(),
                 userMedication.getPrescriptionDay(),
-                userMedication.getStatus(),
                 notifications.stream().map(Notifications::getTime).collect(Collectors.toList())
         );
     }
@@ -44,12 +44,13 @@ public class NotificationService {
         UserMedication userMedication = userMedicationRepository.findById(notificationRequestDTO.getMedicationId())
                 .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 복약 정보입니다."));
 
-        String fcmToken = notificationRequestDTO.getNotificationsDTOList().get(0).getFcmToken();
+        // 새로운 구조에서는 fcmToken을 DTO에서 바로 가져옴
+        String fcmToken = notificationRequestDTO.getFcmToken();
 
-        for (NotificationRequestDTO.NotificationsDTO notificationDTO : notificationRequestDTO.getNotificationsDTOList()) {
+        for (LocalDateTime notificationTime : notificationRequestDTO.getNotificationsTimeList()) {
             Notifications notification = Notifications.builder()
-                    .time(notificationDTO.getTime())
-                    .fcmToken(fcmToken) // 지정한 알림에 대하여 토큰은 동일하게
+                    .time(notificationTime)
+                    .fcmToken(fcmToken) // 지정한 알림에 대하여 토큰은 동일하게 설정
                     .userMedication(userMedication)
                     .enabled(true)
                     .build();
@@ -61,63 +62,83 @@ public class NotificationService {
     // 알림 수정
     @Transactional
     public void updateNotification(NotificationRequestDTO notificationRequestDTO) {
-        for (NotificationRequestDTO.NotificationsDTO notificationDTO : notificationRequestDTO.getNotificationsDTOList()) {
-            Notifications notification = notificationRepository.findById(notificationDTO.getNotificationId())
-                    .orElseThrow(() -> new IllegalArgumentException("해당 알림 정보를 찾을 수 없습니다."));
+        // 요청 DTO에서 알림에 대한 복약 ID와 FCM 토큰 정보를 가져옴
+        int medicationId = notificationRequestDTO.getMedicationId();
+        String fcmToken = notificationRequestDTO.getFcmToken();
 
-            notification.updateTime(notificationDTO.getTime());
-            notificationRepository.save(notification);
+        // 해당 복약 ID로 관련된 알림 정보 조회
+        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
+
+        List<Notifications> existingNotifications = notificationRepository.findByUserMedicationAndFcmToken(userMedication, fcmToken);
+
+        // 요청된 알림 시간 리스트를 순회하며 각 알림의 시간을 업데이트
+        for (int i = 0; i < existingNotifications.size(); i++) {
+            Notifications existingNotification = existingNotifications.get(i);
+            LocalDateTime newTime = notificationRequestDTO.getNotificationsTimeList().get(i);
+
+            // 새로 요청된 시간이 기존 시간과 동일한 경우 예외 발생
+            if (existingNotification.getTime().equals(newTime)) {
+                throw new IllegalArgumentException("새로운 알림 시간이 기존 알림 시간과 동일합니다. 알림 시간을 변경해주세요.");
+            }
+
+            // 알림 시간 업데이트
+            existingNotification.updateTime(newTime);
+            notificationRepository.save(existingNotification);
         }
     }
+
 
 
     // 알림 삭제
     @Transactional
-    public void deleteNotification(int notificationId) {
-        Notifications notification = notificationRepository.findById(notificationId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 알림 정보를 찾을 수 없습니다."));
-
-        notificationRepository.delete(notification);
-    }
-
-    // 복약 알림 지연
-    @Transactional
-    public void pauseMedication(int medicationId) {
-        UserMedication userMedication = userMedicationRepository.findById(medicationId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다.")); // 해당 복약 정보가 없을 때 예외 처리
-
-        userMedication.updateStatus(Status.STOPPED); //상태 중단으로 변경
-
-        // 알림 비활성화 처리
-        List<Notifications> notifications = notificationRepository.findByUserMedication(userMedication);
-        for (Notifications notification : notifications) {
-            notification.updateNotification(false);
-            notificationRepository.save(notification);
-        }
-
-        userMedicationRepository.save(userMedication);
-    }
-
-    // 복약 알림 재개
-    @Transactional
-    public void resumeMedication(int medicationId) {
+    public void deleteNotification(int medicationId) {
+        // 주어진 medicationId로 UserMedication을 조회
         UserMedication userMedication = userMedicationRepository.findById(medicationId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
 
-        if (userMedication.getStatus() == Status.STOPPED) {
-            userMedication.updateStatus(Status.TAKING);
-
-            List<Notifications> notifications = notificationRepository.findByUserMedication(userMedication);
-            for (Notifications notification : notifications) {
-                notification.updateNotification(true);  // 알림 활성화
-                notificationRepository.save(notification);
-            }
-
-            userMedicationRepository.save(userMedication);
-        } else {
-            throw new IllegalArgumentException("중단된 상태가 아닌 복약은 다시 시작할 수 없습니다.");
-        }
+        // 해당 복약 ID에 연관된 모든 알림을 삭제
+        notificationRepository.deleteByUserMedication(userMedication);
     }
+
+    // 복약 알림 지연
+//    @Transactional
+//    public void pauseMedication(int medicationId) {
+//        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+//                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다.")); // 해당 복약 정보가 없을 때 예외 처리
+//
+//        userMedication.updateStatus(Status.STOPPED); //상태 중단으로 변경
+//
+//        // 알림 비활성화 처리
+//        List<Notifications> notifications = notificationRepository.findByUserMedication(userMedication);
+//        for (Notifications notification : notifications) {
+//            notification.updateNotification(false);
+//            notificationRepository.save(notification);
+//        }
+//
+//        userMedicationRepository.save(userMedication);
+//    }
+//
+//    // 복약 알림 재개
+//    @Transactional
+//    public void resumeMedication(int medicationId) {
+//        UserMedication userMedication = userMedicationRepository.findById(medicationId)
+//                .orElseThrow(() -> new IllegalArgumentException("해당 복약 정보를 찾을 수 없습니다."));
+//
+//        if (userMedication.getStatus() == Status.STOPPED) {
+//            userMedication.updateStatus(Status.TAKING);
+//
+//            List<Notifications> notifications = notificationRepository.findByUserMedication(userMedication);
+//            for (Notifications notification : notifications) {
+//                notification.updateNotification(true);  // 알림 활성화
+//                notificationRepository.save(notification);
+//            }
+//
+//            userMedicationRepository.save(userMedication);
+//        } else {
+//            throw new IllegalArgumentException("중단된 상태가 아닌 복약은 다시 시작할 수 없습니다.");
+//        }
+//    }
 
     // 복약 알림 체크
     @Transactional
