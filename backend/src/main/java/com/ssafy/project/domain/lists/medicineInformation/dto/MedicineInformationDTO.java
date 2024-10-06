@@ -9,12 +9,12 @@ import lombok.*;
 @Builder
 public class MedicineInformationDTO {
 
-    private int informationId;
+    private int id;
     private String information;
 
     public static MedicineInformationDTO toMedicineInformationDTO(MedicineInformation medicineInformation) {
         return MedicineInformationDTO.builder()
-                .informationId(medicineInformation.getId())
+                .id(medicineInformation.getId())
                 .information(medicineInformation.getInformation())
                 .build();
     }
