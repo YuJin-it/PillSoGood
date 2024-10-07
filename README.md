@@ -199,7 +199,10 @@
 
 ###	API명세서
 
-이미지
+![api1](image/api1.PNG)
+![api2](image/api2.PNG)
+![api3](image/api3.PNG)
+![api4](image/api4.PNG)
 
 ###	피그마(간략히)
 
