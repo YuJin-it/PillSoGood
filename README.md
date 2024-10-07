@@ -204,7 +204,7 @@
 ![api3](image/api3.PNG)
 ![api4](image/api4.PNG)
 
-###	피그마(간략히)
+###	피그마
 
 ![피그마](image/피그마.png)
 
