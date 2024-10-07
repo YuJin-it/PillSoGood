@@ -150,20 +150,40 @@
 
 ## ✨ 3. 기능 소개
 
-- **기능**
-  - **기능** : 0CHA가 직접 개발하고 고안한 루틴을 추천합니다.
+### AI를 활용한 알약 탐지
+- **설명**
+이미지
+
+### OCR을 활용한 약봉투&처방전 탐지
+- **설명**
+이미지
+
+### 개인인증서를 통한 진료&처방내역 조회
+- **설명**
+이미지
+
+### ElasticSearch를 이용한 약 정보 조회
+- **설명**
+이미지
+
+### FCM을 활용한 복약알림 기능
+- **설명**
+이미지
+
+### 가족 복약정보 관리
+- **설명**
+이미지
 
 
 ## ✨ 4. 사용 기술 & 아키텍쳐
 
 ### 기술 스택
 
-- 수정필요
-- **프론트엔드** : React, JavaScript, Redux-toolkit, styled-components, PWA
-- **백엔드** : SpringBoot, SpringSecurity, JWT, Oauth2.0, FCM
-- **인프라** : Docker, Nginx, Jenkins, Redis, MySQL, Certbot, EC2
-- **특화 기술** : Teachable Machine, Clova OCR
-- **이슈 관리** : JIRA, Mattermost, Notion
+- **프론트엔드** : React, JavaScript, HTML5, Styled-Components, PWA
+- **백엔드** : SpringBoot, SpringSecurity, JPA, JWT, Oauth2.0, FCM
+- **DB** : MariaDB, ElasticSearch
+- **인프라** : Docker, Nginx, Jenkins, Ubuntu
+- **이슈 관리** : JIRA, GitLab, Notion
 
 ### 아키텍쳐
 
@@ -173,13 +193,23 @@
 
 ### 기능명세서
 
+이미지
+
 ###	API명세서
+
+이미지
 
 ###	피그마(간략히)
 
+이미지
+
 ###	ERD
 
+이미지
+
 ###	깃 플로우(선택)
+
+이미지
 
 
 ## ✨ 6. 프로젝트 산출물
