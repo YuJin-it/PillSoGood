@@ -199,8 +199,8 @@
 
 ###	API명세서
 
-&emsp; <img src="image/api1.PNG" width="500" height="400"/> &emsp; <img src="image/api2.PNG" width="500" height="400"/>
-&emsp; <img src="image/api3.PNG" width="500" height="400"/> &emsp; <img src="image/api4.PNG" width="500" height="400"/>
+&emsp; <img src="image/api1.PNG" width="500" height="50%"/> &emsp; <img src="image/api2.PNG" width="500" height="50%"/>
+&emsp; <img src="image/api3.PNG" width="500" height="50%"/> &emsp; <img src="image/api4.PNG" width="500" height="50%"/>
 
 ###	피그마
 
@@ -208,8 +208,7 @@
 
 ###	ERD
 
-&emsp; <img src="image/erd.png" width="100%" height="100%"/>
-&emsp; ![ERD](image/erd.png)
+&emsp; <img src="image/erd.png" width="70%" height="70%"/>
 
 ###	깃 플로우(선택)
 
