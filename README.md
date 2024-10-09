@@ -185,34 +185,36 @@
 - **인프라** : Docker, Nginx, Jenkins, Ubuntu
 - **이슈 관리** : JIRA, GitLab, Notion
 
+
 ### 아키텍쳐
 
-![아키텍처](image/아키텍처.png)
+&emsp; <img src="image/아키텍처.png" width="800" height="600"/>
+
 
 ## ✨ 5. 프로젝트 기획
 
 ### 기능명세서
 
-![기능명세서1](image/기능명세서1.PNG)
-![기능명세서2](image/기능명세서2.PNG)
-![기능명세서3](image/기능명세서3.PNG)
+&emsp; <img src="image/기능명세서1.PNG" width="500" height="50%"/> &emsp; <img src="image/기능명세서2.PNG" width="500" height="50%"/>
+&emsp; <img src="image/기능명세서3.PNG" width="500" height="50%"/>
+
 
 ###	API명세서
 
 &emsp; <img src="image/api1.PNG" width="500" height="50%"/> &emsp; <img src="image/api2.PNG" width="500" height="50%"/>
 &emsp; <img src="image/api3.PNG" width="500" height="50%"/> &emsp; <img src="image/api4.PNG" width="500" height="50%"/>
 
+
 ###	피그마
 
 &emsp; <img src="image/피그마.png" width="800" height="600"/>
+
 
 ###	ERD
 
 &emsp; &emsp; <img src="image/erd.png" width="800" height="600"/>
 
-###	깃 플로우(선택)
 
-이미지
 
 
 ## ✨ 6. 프로젝트 산출물
