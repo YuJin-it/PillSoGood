@@ -12,7 +12,7 @@
 5. 프로젝트 기획
 6. 프로젝트 산출물
 7. 프로젝트 회고
-
+</br>
 
 ## ✨ 1. 프로젝트 소개
 
@@ -24,7 +24,7 @@
 - 기간 : 2024.08.26 ~ 2024.10.11
 - 팀원 정보
 
-&emsp; &emsp; | 이름   | 역할           |
+| 이름   | 역할           |
 | ------ | -------------- |
 | 최용훈 | 팀장, Back-End        |
 | 정경원 | Back-End리더, Infra  |
@@ -32,6 +32,7 @@
 | 이용성 | Front-End리더 |
 | 장유진 | Front-End |
 | 박선민 | Front-End |
+</br>
 
 ### 기능
 
@@ -44,6 +45,7 @@
 | **상호작용 정보 제공** | 등록된 약물들 간의 상호작용 여부를 분석하여, 함께 복용해도 되는지에 대한 정보를 제공합니다.               |
 | **복용 알림**          | 사용자가 설정한 복용 스케줄에 따라 알림 기능을 제공하여, 복용 시간을 놓치지 않도록 돕습니다.              |
 | **가족 복약 관리**          | 한 계정에 가족들의 정보를 입력하고 한꺼번에 관리할 수 있습니다.              |
+</br>
 
 ### 기대효과
 
@@ -52,6 +54,7 @@
 - 보유 중인 약들의 정보, 금기정보, 병용금기정보를 손쉽게 얻을 수 있습니다.
 - 약물 복용 시간에 알림을 받을 수 있어 규칙적으로 약을 복용할 수 있습니다.
 - 가족들의 복약 정보를 하나의 계정에서 손쉽게 관리할 수 있습니다.
+</br>
 
 
 ## ✨ 2. 기획 배경
@@ -96,12 +99,14 @@
     <td> 알러지 위험을 피하고, 안전하게 약을 복용하는 것. </td>
   </tr>
 </table>
+</br>
 
 
   ### 현 상황
 
 - [같이 먹으면 안 돼…코로나 치료제와 병용 금기 '세인트존스워트'란?](https://www.mkhealth.co.kr/news/articleView.html?idxno=61112)
 - [임산부는 먹으면 안 되는 여드름 치료제, ‘이런’ 사람도 금기?](https://www.hidoc.co.kr/healthstory/news/C0000750603)
+</br>
 
 
 ## ✨ 3. 기능 소개
@@ -109,26 +114,32 @@
 ### AI를 활용한 알약 탐지
 - **설명**
 이미지
+</br>
 
 ### OCR을 활용한 약봉투&처방전 탐지
 - **설명**
 이미지
+</br>
 
 ### 개인인증서를 통한 진료&처방내역 조회
 - **설명**
 이미지
+</br>
 
 ### ElasticSearch를 이용한 약 정보 조회
 - **설명**
 이미지
+</br>
 
 ### FCM을 활용한 복약알림 기능
 - **설명**
 이미지
+</br>
 
 ### 가족 복약정보 관리
 - **설명**
 이미지
+</br>
 
 
 ## ✨ 4. 사용 기술 & 아키텍쳐
@@ -141,11 +152,13 @@
 - **AI** : Pytorch, FasAPI, RestNet50
 - **인프라** : Docker, Nginx, Jenkins, Ubuntu
 - **이슈 관리** : JIRA, GitLab, Notion
+</br>
 
 
 ### 아키텍쳐
 
 &emsp; <img src="image/아키텍처.png" width="1000" height="600"/>
+</br>
 
 
 ## ✨ 5. 프로젝트 기획
@@ -154,29 +167,33 @@
 
 &emsp; <img src="image/기능명세서1.PNG" width="500" height="50%"/> &emsp; <img src="image/기능명세서2.PNG" width="500" height="50%"/>
 &emsp; <img src="image/기능명세서3.PNG" width="500" height="50%"/>
+</br>
 
 
 ###	API명세서
 
 &emsp; <img src="image/api1.PNG" width="500" height="50%"/> &emsp; <img src="image/api2.PNG" width="500" height="50%"/>
 &emsp; <img src="image/api3.PNG" width="500" height="50%"/> &emsp; <img src="image/api4.PNG" width="500" height="50%"/>
+</br>
 
 
 ###	피그마
 
 &emsp; <img src="image/피그마.png" width="1000" height="800"/>
+</br>
 
 
 ###	ERD
 
 &emsp; &emsp; <img src="image/erd.png" width="1000" height="800"/>
-
+</br>
 
 
 
 ## ✨ 6. 프로젝트 산출물
 
 ### 화면(알약인지, OCR, 개인인증서, 소셜로그인, ES성능비교 포함)
+</br>
 
 
 ## ✨ 7. 프로젝트 회고
