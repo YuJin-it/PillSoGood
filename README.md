@@ -199,7 +199,7 @@
 
 ###	API명세서
 
-<img src="image/api1.PNG" width="800" height="400"/><img src="image/api2.PNG" width="800" height="400"/>
+<img src="image/api1.PNG" width="400" height="400"/><img src="image/api2.PNG" width="400" height="400"/>
 
 
 ![api1](image/api1.PNG)
