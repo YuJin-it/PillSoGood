@@ -179,16 +179,17 @@
 
 ### 기술 스택
 
-- **프론트엔드** : React, JavaScript, HTML5, Styled-Components, PWA
-- **백엔드** : SpringBoot, SpringSecurity, JPA, JWT, Oauth2.0, FCM
+- **프론트엔드** : React, JavaScript, Styled-Components, PWA, Recoil
+- **백엔드** : SpringBoot, SpringSecurity, Oauth2.0, FireBase
 - **DB** : MariaDB, ElasticSearch
+- **AI** : Pytorch, FasAPI, RestNet50
 - **인프라** : Docker, Nginx, Jenkins, Ubuntu
 - **이슈 관리** : JIRA, GitLab, Notion
 
 
 ### 아키텍쳐
 
-&emsp; <img src="image/아키텍처.png" width="800" height="600"/>
+&emsp; <img src="image/아키텍처.png" width="1000" height="600"/>
 
 
 ## ✨ 5. 프로젝트 기획
@@ -207,12 +208,12 @@
 
 ###	피그마
 
-&emsp; <img src="image/피그마.png" width="800" height="600"/>
+&emsp; <img src="image/피그마.png" width="1000" height="600"/>
 
 
 ###	ERD
 
-&emsp; &emsp; <img src="image/erd.png" width="800" height="600"/>
+&emsp; &emsp; <img src="image/erd.png" width="1000" height="600"/>
 
 
 
