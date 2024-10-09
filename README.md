@@ -208,7 +208,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/cyh.jpg" width="30%" height="30%" style="margin: 0;"/><br>최용훈<br>
+      <img src="image/cyh.jpg" width="20" height="30%" style="margin: 0;"/><br>최용훈<br>
     </td>
     <td>
       팀장, Back-End
@@ -219,7 +219,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/jkw.jpg" width="30%" height="30%" style="margin: 0;"/><br>정경원<br>
+      <img src="image/jkw.jpg" width="20" height="30%" style="margin: 0;"/><br>정경원<br>
     </td>
     <td>
       Back-End리더, Infra
@@ -230,7 +230,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/hjh.JPG" width="30%" height="30%" style="margin: 0;"/><br>한지훈<br>
+      <img src="image/hjh.JPG" width="20" height="30%" style="margin: 0;"/><br>한지훈<br>
     </td>
     <td>
       Back-End, AI
@@ -241,7 +241,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/lys.jpg" width="30%" height="30%" style="margin: 0;"/><br>이용성<br>
+      <img src="image/lys.jpg" width="20" height="30%" style="margin: 0;"/><br>이용성<br>
     </td>
     <td>
       Front-End리더
@@ -252,7 +252,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/jyj.jpg" width="30%" height="30%" style="margin: 0;"/><br>장유진<br>
+      <img src="image/jyj.jpg" width="20" height="30%" style="margin: 0;"/><br>장유진<br>
     </td>
     <td>
       Front-End
@@ -263,7 +263,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/psm.jpg" width="30%" height="30%" style="margin: 0;"/><br>박선민<br>
+      <img src="image/psm.jpg" width="20" height="30%" style="margin: 0;"/><br>박선민<br>
     </td>
     <td>
       Front-End
