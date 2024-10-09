@@ -213,25 +213,74 @@
 
 <table>
   <tr>
+    <td style="text-align:center;"> 이름 </td>
+    <td style="text-align:center;"> 역할 </td>
+    <td style="text-align:center;"> 소감 </td>
+  </tr>
+  <tr>
     <td style="text-align:center;">
-      <img src="image/cyh.jpg" width="30%" height="30%" style="margin: 0;"/><br> 최용훈<br> 팀장, Back-End<br> 공란
+      <img src="image/cyh.jpg" width="30%" height="30%" style="margin: 0;"/><br>최용훈<br>
     </td>
-    <td style="text-align:center;">
-      <img src="image/jkw.jpg" width="30%" height="30%" style="margin: 0;"/><br> 정경원<br> Back-End리더, Infra<br> 공란
+    <td>
+      팀장, Back-End
     </td>
-    <td style="text-align:center;">
-      <img src="image/hjh.JPG" width="30%" height="30%" style="margin: 0;"/><br> 한지훈<br> Back-End, AI<br> 공란
+    <td>
+      공란
     </td>
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/lys.jpg" width="30%" height="30%" style="margin: 0;"/><br> 이용성<br> Front-End리더<br> 공란
+      <img src="image/jkw.jpg" width="30%" height="30%" style="margin: 0;"/><br>정경원<br>
     </td>
-    <td style="text-align:center;">
-      <img src="image/jyj.jpg" width="30%" height="30%" style="margin: 0;"/><br> 장유진<br> Front-End<br> 공란
+    <td>
+      Back-End리더, Infra
     </td>
+    <td>
+      공란
+    </td>
+  </tr>
+  <tr>
     <td style="text-align:center;">
-      <img src="image/psm.jpg" width="30%" height="30%" style="margin: 0;"/><br> 박선민<br> Front-End<br> 공란
+      <img src="image/hjh.JPG" width="30%" height="30%" style="margin: 0;"/><br>한지훈<br>
+    </td>
+    <td>
+      Back-End, AI
+    </td>
+    <td>
+      공란
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+      <img src="image/lys.jpg" width="30%" height="30%" style="margin: 0;"/><br>이용성<br>
+    </td>
+    <td>
+      Front-End리더
+    </td>
+    <td>
+      공란
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+      <img src="image/jyj.jpg" width="30%" height="30%" style="margin: 0;"/><br>장유진<br>
+    </td>
+    <td>
+      Front-End
+    </td>
+    <td>
+      공란
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+      <img src="image/psm.jpg" width="30%" height="30%" style="margin: 0;"/><br>박선민<br>
+    </td>
+    <td>
+      Front-End
+    </td>
+    <td>
+      공란
     </td>
   </tr>
 </table>
