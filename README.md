@@ -199,6 +199,7 @@
 
 ###	API명세서
 
+<img src="image/api1.PNG" width="200" height="400"/>
 ![api1](image/api1.PNG)
 ![api2](image/api2.PNG)
 ![api3](image/api3.PNG)
@@ -229,7 +230,7 @@
 |  ![최용훈](image/cyh.jpg)<br>최용훈  |    팀장(BE)     | 공란                                                                                                                     |
 | ![이용성](image/lys.jpg) <br> 이용성 |     FE 리더     | 공란                                                                                           |
 | ![정경원](image/jkw.jpg) <br>정경원  | BE 리더, 인프라 | 공란                                                                                                                                         |
-| ![한지훈](image/hjh.jpg) <br> 한지훈 |     BE, AI      | 공란                                                                                                                                                            |
+| ![한지훈](image/hjh.JPG) <br> 한지훈 |     BE, AI      | 공란                                                                                                                                                            |
 | ![장유진](image/jyj.jpg) <br>장유진  |       FE        | 공란 |
 | ![박선민](image/psm.jpg) <br>박선민  |       FE        |공란               |                                                                                                                 
 
