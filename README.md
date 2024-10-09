@@ -60,11 +60,6 @@
 
 <table>
   <tr>
-    <td colspan="3" style="text-align: center;">
-      <div style="font-size: 22px;">김민수 (45세, 남성, 만성질환자)</div>
-    </td>
-  </tr>
-  <tr>
     <td style="text-align: center;">이름</td>
     <td style="text-align: center;">배경</td>
     <td style="text-align: center;">니즈</td>
@@ -102,71 +97,6 @@
   </tr>
 </table>
 
-<br />
-
-<table>
-  <tr>
-    <td colspan="3" style="text-align: center;">
-      <div style="font-size: 22px;">이지영 (32세, 여성, 임산부)</div>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">배경</td>
-    <td style="text-align: center;">니즈</td>
-    <td style="text-align: center;">목표</td>
-  </tr>
-  <tr>
-    <td> 이지영 씨는 임신 6개월 차로, 임신 중에 복용할 수 있는 약물에 대해 많은 관심과 걱정을 가지고 있습니다. 특히, 평소 앓고 있는 편두통 약이 태아에게 미칠 영향이 걱정됩니다. </td>
-    <td> 임신 중 안전한 약물 복용 안내, 
-복약 정보에 대한 쉽게 접근할 수 있는 정보 제공, 
-복용 약물과 임신 상태를 기반으로 한 안전성 검토 </td>
-    <td> 임신 중에도 안전하게 약물을 복용하고, 태아의 건강을 지키는 것. </td>
-  </tr>
-</table>
-
-<br /><table>
-
-  <tr>
-    <td colspan="3" style="text-align: center;">
-      <div style="font-size: 22px;">박성준 (70세, 남성, 고령자)</div>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">배경</td>
-    <td style="text-align: center;">니즈</td>
-    <td style="text-align: center;">목표</td>
-  </tr>
-  <tr>
-    <td> 박성준 씨는 고령자로, 복용해야 하는 약이 많습니다. 하지만 약물의 이름을 헷갈리거나, 복약 시간과 용량을 잊어버리기 쉽습니다. 그는 간단한 사용법으로 모든 복약 정보를 관리하고 싶어 합니다. </td>
-    <td> 약물 이름과 복용 방법을 쉽게 관리할 수 있는 시스템, 
-복약 알림 기능, 
-약물 상호작용에 대한 간단한 안내 </td>
-    <td> 혼동 없이 약물을 정확하게 복용하고, 약물 상호작용으로 인한 문제를 피하는 것. </td>
-  </tr>
-</table>
-
-<br /><table>
-
-  <tr>
-    <td colspan="3" style="text-align: center;">
-      <div style="font-size: 22px;"> 정은영 (28세, 여성, 알러지 환자)</div>
-    </td>
-  </tr>
-  <tr>
-    <td style="text-align: center;">배경</td>
-    <td style="text-align: center;">니즈</td>
-    <td style="text-align: center;">목표</td>
-  </tr>
-  <tr>
-    <td> 정은영 씨는 특정 성분에 심각한 알러지가 있어, 약물 복용 시 항상 주의를 기울입니다. 그녀는 자신이 복용할 수 있는 약물인지 여부를 빠르고 정확하게 확인하고 싶어 합니다. </td>
-    <td> 특정 성분에 대한 알러지 위험성 안내, 
-약물 등록 후, 알러지 성분 포함 여부 자동 확인, 
-약국으로 빠르게 문의할 수 있는 기능 </td>
-    <td> 알러지 위험을 피하고, 안전하게 약을 복용하는 것. </td>
-  </tr>
-</table>
-
-<br /> 자세 교정을 받을 수 있다.
 
   ### 현 상황
 
