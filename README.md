@@ -208,7 +208,7 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/cyh.jpg" width="20" height="30%" style="margin: 0;"/><br>최용훈<br>
+      <img src="image/cyh.jpg" width="100" height="30%" style="margin: 0;"/><br style="text-align:center;">최용훈<br>
     </td>
     <td>
       팀장, Back-End
