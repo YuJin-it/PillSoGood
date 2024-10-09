@@ -208,12 +208,12 @@
 
 ###	피그마
 
-&emsp; <img src="image/피그마.png" width="1000" height="600"/>
+&emsp; <img src="image/피그마.png" width="1000" height="800"/>
 
 
 ###	ERD
 
-&emsp; &emsp; <img src="image/erd.png" width="1000" height="600"/>
+&emsp; &emsp; <img src="image/erd.png" width="1000" height="800"/>
 
 
 
