@@ -200,8 +200,8 @@
 
 ## ✨ 7. 프로젝트 회고
 
-| 이름 | 역할 | 소감 |
-| - | :-------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :이름: | :역할: | :소감: |
+| :-: | :-------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img src="image/cyh.jpg" width="20%" height="30%"/> <br> 최용훈 |    팀장, Back-End     | 공ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ란 |
 | <img src="image/jkw.jpg" width="20%" height="30%"/> <br> 정경원 | Back-End리더, Infra | 공란 |
 | <img src="image/hjh.JPG" width="20%" height="30%"/> <br> 한지훈 |     Back-End, AI      | 공란 |
@@ -209,3 +209,30 @@
 | <img src="image/jyj.jpg" width="20%" height="30%"/> <br> 장유진 |       Front-End        | 공란 |
 | <img src="image/psm.jpg" width="20%" height="30%"/> <br> 박선민 |       Front-End        | 공란 |
 <br><br>
+
+
+<table>
+  <tr>
+    <td style="text-align:center;">
+      <img src="image/cyh.jpg" width="30%" height="30%" style="margin: 0;"/><br> 최용훈<br> 팀장, Back-End<br> 공란
+    </td>
+    <td style="text-align:center;">
+      <img src="image/jkw.jpg" width="30%" height="30%" style="margin: 0;"/><br> 정경원<br> Back-End리더, Infra<br> 공란
+    </td>
+    <td style="text-align:center;">
+      <img src="image/hjh.JPG" width="30%" height="30%" style="margin: 0;"/><br> 한지훈<br> Back-End, AI<br> 공란
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">
+      <img src="image/lys.jpg" width="30%" height="30%" style="margin: 0;"/><br> 이용성<br> Front-End리더<br> 공란
+    </td>
+    <td style="text-align:center;">
+      <img src="image/jyj.jpg" width="30%" height="30%" style="margin: 0;"/><br> 장유진<br> Front-End<br> 공란
+    </td>
+    <td style="text-align:center;">
+      <img src="image/psm.jpg" width="30%" height="30%" style="margin: 0;"/><br> 박선민<br> Front-End<br> 공란
+    </td>
+  </tr>
+</table>
+
