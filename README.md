@@ -204,11 +204,11 @@
 
 ###	피그마
 
-&emsp; ![피그마](image/피그마.png)
+&emsp; <img src="image/피그마.png" width="800" height="600"/>
 
 ###	ERD
 
-&emsp; <img src="image/erd.png" width="800" height="500"/>
+&emsp; &emsp; <img src="image/erd.png" width="800" height="600"/>
 
 ###	깃 플로우(선택)
 
