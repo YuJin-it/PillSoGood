@@ -208,7 +208,7 @@
 
 ###	ERD
 
-&emsp; <img src="image/erd.png" width="50%" height="50%"/>
+&emsp; <img src="image/erd.png" width="80%" height="50%"/>
 
 ###	깃 플로우(선택)
 
