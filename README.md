@@ -202,15 +202,15 @@
 
 <table>
   <tr>
-    <td style="text-align:center;"> 이름 </td>
-    <td style="text-align:center;"> 역할 </td>
-    <td style="text-align:center;"> 소감 </td>
+    <th style="text-align:center;"> 이름 </td>
+    <th style="text-align:center;"> 역할 </td>
+    <th style="text-align:center;"> 소감 </td>
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/cyh.jpg" width="100" height="30%" style="margin: 0;"/><br style="text-align:center;">최용훈<br>
+      <img src="image/cyh.jpg" width="100" height="30%" style="margin: 0;"/><br>최용훈
     </td>
-    <td>
+    <td style="text-align:center;">
       팀장, Back-End
     </td>
     <td>
@@ -219,9 +219,9 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/jkw.jpg" width="100" height="30%" style="margin: 0;"/><br>정경원<br>
+      <img src="image/jkw.jpg" width="100" height="30%" style="margin: 0;"/><br>정경원
     </td>
-    <td>
+    <td style="text-align:center;">
       Back-End리더, Infra
     </td>
     <td>
@@ -230,9 +230,9 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/hjh.JPG" width="100" height="30%" style="margin: 0;"/><br>한지훈<br>
+      <img src="image/hjh.JPG" width="100" height="30%" style="margin: 0;"/><br>한지훈
     </td>
-    <td>
+    <td style="text-align:center;">
       Back-End, AI
     </td>
     <td>
@@ -241,9 +241,9 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/lys.jpg" width="100" height="30%" style="margin: 0;"/><br>이용성<br>
+      <img src="image/lys.jpg" width="100" height="30%" style="margin: 0;"/><br>이용성
     </td>
-    <td>
+    <td style="text-align:center;">
       Front-End리더
     </td>
     <td>
@@ -252,9 +252,9 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/jyj.jpg" width="100" height="30%" style="margin: 0;"/><br>장유진<br>
+      <img src="image/jyj.jpg" width="100" height="30%" style="margin: 0;"/><br>장유진
     </td>
-    <td>
+    <td style="text-align:center;">
       Front-End
     </td>
     <td>
@@ -263,9 +263,9 @@
   </tr>
   <tr>
     <td style="text-align:center;">
-      <img src="image/psm.jpg" width="100" height="30%" style="margin: 0;"/><br>박선민<br>
+      <img src="image/psm.jpg" width="100" height="30%" style="margin: 0;"/><br>박선민
     </td>
-    <td>
+    <td style="text-align:center;">
       Front-End
     </td>
     <td>
