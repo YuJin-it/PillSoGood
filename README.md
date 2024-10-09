@@ -202,56 +202,10 @@
 
 | 이름 | 역할 | 소감 |
 | :-------------: | :-------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="image/cyh.jpg" width="30%" height="30%"/> <br> 최용훈  |    팀장, Back-End     | 공란 |
+| <img src="image/cyh.jpg" width="30%" height="30%"/> <br> 최용훈  |    팀장, Back-End     | 공ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ란 |
 | <img src="image/jkw.jpg" width="30%" height="30%"/> <br> 정경원 | Back-End리더, Infra | 공란 |
 | <img src="image/hjh.JPG" width="30%" height="30%"/> <br> 한지훈 |     Back-End, AI      | 공란 |
 | <img src="image/lys.jpg" width="30%" height="30%"/> <br> 이용성 |     Front-End리더     | 공란 |
 | <img src="image/jyj.jpg" width="30%" height="30%"/> <br> 장유진 |       Front-End        | 공란 |
 | <img src="image/psm.jpg" width="30%" height="30%"/> <br> 박선민 |       Front-End        | 공란 |
-
-
-<br><br><br><br><br><br>
-
-
-
-
-
-
-
-
-## 5. 시스템 아키텍처
-![image.png](image/image.png)
-
-## 6. 주요 화면
-
-### 메인 화면
-![주요 화면 1](image/image-1.png)
-
-### 회원가입 화면
-![image-26.png](image/image-26.png)
-
-### 약 정보
-![image-15.png](image/image-15.png)
-
-### 약 상세정보
-![image-9.png](image/image-9.png)
-
-### 복약 정보 등록 방법
-![image-14.png](image/image-14.png)
-
-### 처방전 사진으로 등록
-![image-16.png](image/image-16.png)
-
-### 알약 사진 등록 
-![image-21.png](image/image-21.png)
-
-### 복약카드 직접 입력
-![image-22.png](image/image-22.png)
-
-### 복약키드 조회
-![image-23.png](image/image-23.png)
-
-### 복약 알림
-![image-24.png](image/image-24.png)
-
-### 
+<br><br><
