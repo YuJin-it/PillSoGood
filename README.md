@@ -200,20 +200,15 @@
 ###	API명세서
 
 &emsp; <img src="image/api1.PNG" width="500" height="400"/> &emsp; <img src="image/api2.PNG" width="500" height="400"/>
-
-
-![api1](image/api1.PNG)
-![api2](image/api2.PNG)
-![api3](image/api3.PNG)
-![api4](image/api4.PNG)
+&emsp; <img src="image/api3.PNG" width="500" height="400"/> &emsp; <img src="image/api4.PNG" width="500" height="400"/>
 
 ###	피그마
 
-![피그마](image/피그마.png)
+&emsp; ![피그마](image/피그마.png)
 
 ###	ERD
 
-![ERD](image/erd.png)
+&emsp; ![ERD](image/erd.png)
 
 ###	깃 플로우(선택)
 
