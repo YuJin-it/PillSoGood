@@ -115,7 +115,7 @@
 <br>
 
 
-## ✨ 3. 기능 소개
+## ✨ 3. 특화 기능 소개
 
 ### AI를 활용한 알약 탐지
 - **설명**
@@ -123,8 +123,10 @@
 <br>
 
 ### OCR을 활용한 약봉투&처방전 탐지
-- **설명**
-이미지
+- 이미지를 촬영하여 원본 이미지와 전처리한 이미지를 네이버 클라우드(ocr)을 이용하여 약 정보를 분석한다
+- '정', '캡슐', '정제' 와 같은 단어가 포함되었을 경우 의약품으로 간주한다
+- 출력된 약물 정보는 저장된 데이터에 검색 후, 유효한 정보만 약물 카드에 등록되도록 한다
+&emsp; <img src="image/ocr1.jpg" width="380" height="50%"/> &emsp; <img src="image/ocr2.PNG" width="380" height="50%"/>
 <br>
 
 ### 개인인증서를 통한 진료&처방내역 조회
@@ -134,9 +136,7 @@
 
 ### ElasticSearch를 이용한 약 정보 조회
 - 엘라스틱 서치를 이용한 약 정보 조회 성능 개선
-
-
-이미지
+&emsp; <img src="image/엘라스틱성능1.png" width="380" height="50%"/> &emsp; <img src="image/엘라스틱성능2.PNG" width="380" height="50%"/>
 <br>
 
 ### FCM을 활용한 복약알림 기능
@@ -178,8 +178,8 @@
 
 ###	API명세서
 
-&emsp; <img src="image/api1.PNG" width="500" height="50%"/> &emsp; <img src="image/api2.PNG" width="500" height="50%"/>
-&emsp; <img src="image/api3.PNG" width="500" height="50%"/> &emsp; <img src="image/api4.PNG" width="500" height="50%"/>
+&emsp; <img src="image/api1.PNG" width="380" height="50%"/> &emsp; <img src="image/api2.PNG" width="380" height="50%"/>
+&emsp; <img src="image/api3.PNG" width="380" height="50%"/> &emsp; <img src="image/api4.PNG" width="380" height="50%"/>
 <br>
 
 ###	피그마
