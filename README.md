@@ -123,11 +123,8 @@
 - 처음부터 구현하였지만 성능이 별로 좋지 않았기에, `Pre-Trained` 모델을 가져온 후 `Fine-Tuning`을 이용하여 훈련하는 방법을 채택
 - `epoch` (1차:10개, 2차:30개)
 - [AI-HUB의 경구약제 이미지(420종, 약 15만개 이미지파일, 1.3TB)](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=576)<br>
-&emsp; <img src="image/ai.PNG" width="380" height="50%"/>  <img src="image/ai2.PNG" width="380" height="50%"/><br>
-&emsp; <img src="image/ai3.PNG" width="380" height="50%"/> &emsp; <img src="image/ai4.PNG" width="380" height="50%"/>
-<br>
-
-이미지
+&emsp; <img src="image/ai.PNG" width="380" height="50%"/> <img src="image/ai2.PNG" width="380" height="50%"/><br>
+&emsp; <img src="image/ai3.PNG" width="380" height="50%"/> <img src="image/ai4.PNG" width="380" height="50%"/>
 <br>
 
 ### OCR을 활용한 약봉투&처방전 탐지
@@ -137,9 +134,11 @@
 &emsp; <img src="image/ocr1.jpg" width="380" height="50%"/> &emsp; <img src="image/ocr2.PNG" width="380" height="50%"/>
 <br>
 
-### 개인인증서를 통한 진료&처방내역 조회
-- **설명**
-이미지
+### 개인인증서를 통한 진료 & 처방내역 조회
+- 카카오 개인인증서를 통해 개인 진료 & 처방 내역 조회
+- 개인정보를 입력하면 암호화를 통해 데이터허브에 요청을 보내 callbackId를 받음
+- callbackId로 진료 & 처방 내역을 JSON으로 받고, 파싱을 통해 저장<br>
+&emsp; <img src="image/인증서.PNG" width="380" height="50%"/> &emsp; <img src="image/인증서.png" width="380" height="50%"/><br>
 <br>
 
 ### ElasticSearch를 이용한 약 정보 조회
