@@ -153,7 +153,7 @@
 - Firebase Cloud Messaging(FCM)을 이용해 사용자에게 복약 시간 알림 전송
 - 사용자별 복약 스케줄을 설정하고 지정된 시간대에 알림을 발송함으로써 복약 준수도 향상
 - 복약 정보와 사용자 디바이스 토큰을 REST API로 연동하여 알림 메시지 생성 및 전송
-&emsp; <img src="image/fcm.png" width="380" height="50%"/>
+&emsp; <img src="image/fcm.png" width="500" height="80%"/>
 <br>
 <br>
 
