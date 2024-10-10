@@ -131,19 +131,19 @@
 - 이미지를 촬영하여 원본 이미지와 전처리한 이미지를 네이버 클라우드(ocr)을 이용하여 약 정보를 분석한다
 - '정', '캡슐', '정제' 와 같은 단어가 포함되었을 경우 의약품으로 간주한다
 - 출력된 약물 정보는 저장된 데이터에 검색 후, 유효한 정보만 약물 카드에 등록되도록 한다<br>
-&emsp; <img src="image/ocr1.jpg" width="380" height="50%"/> &emsp; <img src="image/ocr2.PNG" width="380" height="50%"/>
+&emsp; <img src="image/ocr1.jpg" width="380" height="50%"/> <img src="image/ocr2.PNG" width="380" height="50%"/>
 <br>
 
 ### 개인인증서를 통한 진료 & 처방내역 조회
 - 카카오 개인인증서를 통해 개인 진료 & 처방 내역 조회
 - 개인정보를 입력하면 암호화를 통해 데이터허브에 요청을 보내 callbackId를 받음
 - callbackId로 진료 & 처방 내역을 JSON으로 받고, 파싱을 통해 저장<br>
-&emsp; <img src="image/인증서.PNG" width="380" height="50%"/> &emsp; <img src="image/인증서.png" width="380" height="50%"/><br>
+&emsp; <img src="image/인증서.PNG" width="380" height="50%"/> <img src="image/인증서.png" width="380" height="50%"/><br>
 <br>
 
 ### ElasticSearch를 이용한 약 정보 조회
 - 엘라스틱 서치를 이용한 약 정보 조회 성능 개선<br>
-&emsp; <img src="image/엘라스틱성능1.png" width="380" height="50%"/> &emsp; <img src="image/엘라스틱성능2.PNG" width="380" height="50%"/>
+&emsp; <img src="image/엘라스틱성능1.png" width="380" height="50%"/> <img src="image/엘라스틱성능2.PNG" width="380" height="50%"/>
 <br>
 
 ### FCM을 활용한 복약알림 기능
