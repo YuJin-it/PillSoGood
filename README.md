@@ -133,7 +133,9 @@
 <br>
 
 ### ElasticSearch를 이용한 약 정보 조회
-- **설명**
+- 엘라스틱 서치를 이용한 약 정보 조회 성능 개선
+
+
 이미지
 <br>
 
@@ -170,8 +172,8 @@
 
 ### 기능명세서
 
-&emsp; <img src="image/기능명세서1.PNG" width="500" height="50%"/> &emsp; <img src="image/기능명세서2.PNG" width="500" height="50%"/>
-&emsp; <img src="image/기능명세서3.PNG" width="500" height="50%"/>
+&emsp; <img src="image/기능명세서1.PNG" width="400" height="50%"/> &emsp; <img src="image/기능명세서2.PNG" width="400" height="50%"/>
+&emsp; <img src="image/기능명세서3.PNG" width="400" height="50%"/>
 <br>
 
 ###	API명세서
