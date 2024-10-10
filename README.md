@@ -142,7 +142,9 @@
 <br>
 
 ### ElasticSearch를 이용한 약 정보 조회
-- 엘라스틱 서치를 이용한 약 정보 조회 성능 개선<br>
+- 엘라스틱 서치를 이용한 약 정보 조회 성능 개선
+- ELK 스택을 통해 인덱싱, 시각화, RDBMS와 연동
+- 일반 조회와 엘라스틱 조회의 성능 비교를 통해 개선효과 체감(약 90%)<br>
 &emsp; <img src="image/엘라스틱성능1.png" width="380" height="50%"/> <img src="image/엘라스틱성능2.PNG" width="380" height="50%"/>
 <br>
 
