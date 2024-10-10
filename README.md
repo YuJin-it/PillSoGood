@@ -172,8 +172,8 @@
 
 ### 기능명세서
 
-&emsp; <img src="image/기능명세서1.PNG" width="50%" height="50%"/> &emsp; <img src="image/기능명세서2.PNG" width="50%" height="50%"/>
-&emsp; <img src="image/기능명세서3.PNG" width="50%" height="50%"/>
+&emsp; <img src="image/기능명세서1.PNG" width="380" height="50%"/> &emsp; <img src="image/기능명세서2.PNG" width="380" height="50%"/>
+&emsp; <img src="image/기능명세서3.PNG" width="380" height="50%"/>
 <br>
 
 ###	API명세서
