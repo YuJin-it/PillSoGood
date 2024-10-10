@@ -135,7 +135,7 @@
 <br>
 
 ### ElasticSearch를 이용한 약 정보 조회
-- 엘라스틱 서치를 이용한 약 정보 조회 성능 개선
+- 엘라스틱 서치를 이용한 약 정보 조회 성능 개선<br>
 &emsp; <img src="image/엘라스틱성능1.png" width="380" height="50%"/> &emsp; <img src="image/엘라스틱성능2.PNG" width="380" height="50%"/>
 <br>
 
