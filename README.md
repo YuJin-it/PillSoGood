@@ -191,7 +191,7 @@
 
 ###	피그마
 
-&emsp; <img src="image/피그마.png" width="1000" height="800"/>
+&emsp; <img src="image/figma.png" width="1000" height="800"/>
 <br>
 
 ###	ERD
