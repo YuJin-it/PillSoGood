@@ -138,7 +138,7 @@
 - 카카오 개인인증서를 통해 개인 진료 & 처방 내역 조회
 - 개인정보를 입력하면 암호화를 통해 데이터허브에 요청을 보내 callbackId를 받음
 - callbackId로 진료 & 처방 내역을 JSON으로 받고, 파싱을 통해 저장<br>
-&emsp; <img src="image/인증서.PNG" width="380" height="50%"/> <img src="image/인증서.png" width="380" height="50%"/><br>
+&emsp; <img src="image/인증서.PNG" width="380" height="50%"/> <img src="image/인증서2.png" width="380" height="50%"/><br>
 <br>
 
 ### ElasticSearch를 이용한 약 정보 조회
