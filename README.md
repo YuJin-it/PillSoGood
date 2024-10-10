@@ -124,7 +124,7 @@
 - `epoch` (1차:10개, 2차:30개)
 - [AI-HUB의 경구약제 이미지(420종, 약 15만개 이미지파일, 1.3TB)](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=576)<br>
 &emsp; <img src="image/ai.PNG" width="380" height="50%"/> &emsp; <img src="image/ai2.PNG" width="380" height="50%"/>
-&emsp; <img src="image/ai3.jpg" width="380" height="50%"/> &emsp; <img src="image/ai4.PNG" width="380" height="50%"/>
+&emsp; <img src="image/ai3.PNG" width="380" height="50%"/> &emsp; <img src="image/ai4.PNG" width="380" height="50%"/>
 <br>
 
 이미지
