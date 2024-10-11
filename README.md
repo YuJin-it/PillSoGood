@@ -157,6 +157,12 @@
 - 복약 정보와 사용자 디바이스 토큰을 REST API로 연동하여 알림 메시지 생성 및 전송<br>
 &emsp; <img src="image/fcm1.png" width="380" height="50%"/> <img src="image/fcm2.png" width="380" height="50%"/>
 <br>
+
+### Recoil을 활용한 상태관리
+- Recoil을 사용하여 애플리케이션의 전역 상태를 효율적으로 관리
+- 상태 변화에 따라 자동으로 UI가 리렌더링 돼 사용자 경험을 향상
+- 상태 관리를 통해 API요청을 여러번 보내지 않아서 서버 부담 최소화
+<br>
 <br>
 
 
